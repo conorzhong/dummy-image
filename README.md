@@ -4,6 +4,6 @@
 
 - [ ] watermark?
 - [ ] cache(server, client)
-- [ ] home page
-- [ ] try catch
+- [x] home page
+- [x] try catch
 - [ ] file name
