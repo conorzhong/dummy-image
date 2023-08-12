@@ -7,6 +7,7 @@ specifiers:
   ahooks: ^3.7.8
   antd: ^5.8.2
   autoprefixer: 10.4.14
+  dayjs: ^1.11.9
   eslint: 8.46.0
   eslint-config-next: 13.4.13
   next: 13.4.13
@@ -25,6 +26,7 @@ dependencies:
   ahooks: 3.7.8_react@18.2.0
   antd: 5.8.2_biqbaboplfbrettd7655fr4n2y
   autoprefixer: 10.4.14_postcss@8.4.27
+  dayjs: 1.11.9
   eslint: 8.46.0
   eslint-config-next: 13.4.13_7haavtekmro7ptbnqmctjaodju
   next: 13.4.13_biqbaboplfbrettd7655fr4n2y
