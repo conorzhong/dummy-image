@@ -12,6 +12,10 @@ export const getResponse = async (option: Option) => {
     'content-disposition',
     `inline; filename="${option.width}x${option.height}.dummy-image.${option.format}"`
   )
+  headers.append(
+    'cache-control',
+    'public, max-age=600, stale-while-revalidate=3600'
+  )
 
   return new Response(buffer, { headers })
 }
