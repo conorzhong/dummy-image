@@ -82,6 +82,10 @@ export const getImageResponse = async (option: Option) => {
 
   const headers = new Headers()
   headers.append('content-type', `image/${option.format}`)
+  headers.append(
+    'content-disposition',
+    `inline; filename="${option.width}x${option.height}.dummy-image.${option.format}"`
+  )
 
   return new Response(buffer, { headers })
 }
