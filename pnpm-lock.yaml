@@ -11,6 +11,7 @@ specifiers:
   eslint-config-next: 13.4.13
   next: 13.4.13
   postcss: 8.4.27
+  quick-lru: ^6.1.1
   react: 18.2.0
   react-dom: 18.2.0
   sharp: ^0.32.4
@@ -28,6 +29,7 @@ dependencies:
   eslint-config-next: 13.4.13_7haavtekmro7ptbnqmctjaodju
   next: 13.4.13_biqbaboplfbrettd7655fr4n2y
   postcss: 8.4.27
+  quick-lru: 6.1.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   sharp: 0.32.4
@@ -2638,6 +2640,11 @@ packages:
 
   /queue-tick/1.0.1:
     resolution: {integrity: sha512-kJt5qhMxoszgU/62PLP1CJytzd2NKetjSRnyuj31fDd3Rlcz3fzlFdFLD1SItunPwyqEOkca6GbV612BWfaBag==}
+    dev: false
+
+  /quick-lru/6.1.1:
+    resolution: {integrity: sha512-S27GBT+F0NTRiehtbrgaSE1idUAJ5bX8dPAQTdylEyNlrdcH5X4Lz7Edz3DYzecbsCluD5zO8ZNEe04z3D3u6Q==}
+    engines: {node: '>=12'}
     dev: false
 
   /rc-align/4.0.15_biqbaboplfbrettd7655fr4n2y:

@@ -1,8 +1,6 @@
 import { NextRequest } from 'next/server'
 import sharp from 'sharp'
 
-export type Slug = string[]
-
 /**
  * https://sharp.pixelplumbing.com/api-output#toformat
  * https://www.iana.org/assignments/media-types/media-types.xhtml
@@ -25,6 +23,12 @@ export type Option = {
   color: string
   text: string
   format: Format
+}
+
+export class OptionError extends Error {
+  constructor(public message: string) {
+    super(message)
+  }
 }
 
 export function getOption(request: NextRequest, size: string): Option {
@@ -51,47 +55,5 @@ export function getOption(request: NextRequest, size: string): Option {
     color,
     text,
     format,
-  }
-}
-
-export const getImageResponse = async (option: Option) => {
-  const bg = sharp({
-    create: {
-      width: option.width,
-      height: option.height,
-      background: '#' + option.bg,
-      channels: 4,
-    },
-  })
-
-  const markupText = `<span color="#${option.color}" background="#${option.bg}">${option.text}</span>`
-  const image = bg.composite([
-    {
-      input: {
-        text: {
-          text: markupText,
-          width: 0.6 * option.width,
-          height: 0.6 * option.height,
-          rgba: true,
-        },
-      },
-    },
-  ])
-
-  const buffer = await image.toFormat(option.format).toBuffer()
-
-  const headers = new Headers()
-  headers.append('content-type', `image/${option.format}`)
-  headers.append(
-    'content-disposition',
-    `inline; filename="${option.width}x${option.height}.dummy-image.${option.format}"`
-  )
-
-  return new Response(buffer, { headers })
-}
-
-export class OptionError extends Error {
-  constructor(public message: string) {
-    super(message)
   }
 }

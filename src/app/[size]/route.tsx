@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server'
-import { OptionError, getImageResponse, getOption } from './helper'
+import { OptionError, getOption } from './utils/option'
+import { getResponse } from './utils/response'
 
 export async function GET(
   request: NextRequest,
@@ -8,10 +9,10 @@ export async function GET(
   try {
     const { size } = params
     const option = getOption(request, size)
-    return getImageResponse(option)
-  } catch (e) {
+    return getResponse(option)
+  } catch (e: OptionError | unknown) {
     console.error(e)
-    return getImageResponse({
+    return getResponse({
       bg: 'fff',
       color: '000',
       format: 'png',

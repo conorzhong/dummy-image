@@ -2,7 +2,7 @@
 
 import { useRequest } from 'ahooks'
 import { ColorPicker, Form, Input, Select, Typography } from 'antd'
-import { Option } from '../[size]/helper'
+import { Option } from '@/app/[size]/utils/option'
 
 const defaultOption: Option = {
   width: 600,
