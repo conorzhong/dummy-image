@@ -2,7 +2,7 @@
 
 ## Roadmap
 
-- [ ] watermark?
+- ~~[ ] watermark~~
 - [x] cache(server, client, 304)
 - [x] home page
 - [x] try catch
